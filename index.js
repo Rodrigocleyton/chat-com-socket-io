@@ -5,12 +5,21 @@ const io = require("socket.io")(http)
 const port = 8080
 
 
+io.on("connection", (socket)=>{
+    
+    socket.on("disconect", () =>{
+        console.log("Cliente fulano desconectado " + socket.id)
+    })
+})
 
 
 
 
+app.set("view engine", "ejs")
 
-
+app.get("/", (req,res)=>{
+    res.render("index")
+})
 
 http.listen(port, ()=>{
     console.log("Servidor rodando na porta ", port)
