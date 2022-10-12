@@ -10,6 +10,11 @@ io.on("connection", (socket)=>{
     socket.on("disconnect", () =>{
         console.log("Cliente fulano desconectado " + socket.id)
     })
+
+    socket.on("msg", (data)=>{
+        socket.emit("showmsg", data)
+        console.log(data)
+    })
 })
 
 
