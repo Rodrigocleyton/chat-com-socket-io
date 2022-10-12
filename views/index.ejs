@@ -24,6 +24,14 @@
         console.log("desconectado")
     })
 
+    socket.on("showmsg", (data)=>{
+        console.log(data)
+        var chat = document.getElementById("chat")
+        var p = document.createElement("p")
+        p.innerHTML = data.username + " : " + data.msg
+        chat.append(p)
+    } )
+
     function enviar() {
         //captura o elemento msg e colaca dentro de uma variavel
         var msgField = document.getElementById("msg")

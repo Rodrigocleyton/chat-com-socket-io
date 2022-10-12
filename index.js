@@ -11,8 +11,10 @@ io.on("connection", (socket)=>{
         console.log("Cliente fulano desconectado " + socket.id)
     })
 
+    //io serve para o envio global das mensagens ou socket.boradcast.emit(envia para todo mundo menos para quem enviou)
+    //a partir do servidor emita para todo mundo as mensagens enviadas por algum cliente
     socket.on("msg", (data)=>{
-        socket.emit("showmsg", data)
+        io.emit("showmsg", data)
         console.log(data)
     })
 })
