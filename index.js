@@ -7,7 +7,7 @@ const port = 8080
 
 io.on("connection", (socket)=>{
     
-    socket.on("disconect", () =>{
+    socket.on("disconnect", () =>{
         console.log("Cliente fulano desconectado " + socket.id)
     })
 })

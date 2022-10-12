@@ -11,6 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js"></script>
     <script>
         var socket = io("http://localhost:8080")
+
+        socket.on("disconnect", ()=>{
+            console.log("desconectado")
+        })
     </script>
 </body>
 </html>
